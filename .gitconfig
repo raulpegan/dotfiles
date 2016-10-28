@@ -1,0 +1,23 @@
+[user]
+	email = raulpegan1@gmail.com
+	name = Raul Pegan
+[core]
+    editor = vim
+[color]
+    ui = true
+
+[color "branch"]
+    current = yellow reverse
+    local = yello
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = red
