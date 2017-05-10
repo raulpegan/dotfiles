@@ -9,7 +9,19 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# i3-gaps
+for_window [class="^.*"] border pixel 0
+gaps inner 15
+smart_gaps on
+
+bindsym $mod+z gaps inner current plus 5
+bindsym $mod+Shift+z gaps inner current minus 5
+
 set $mod Mod4
+
+# Set variables
+set $term urxvt -e tmux
+set $browser chromium
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -33,7 +45,7 @@ hide_edge_borders both
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite -e tmux 
+bindsym $mod+Return exec $term 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -45,11 +57,14 @@ bindsym $mod+Shift+q kill
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# Start browser
+bindsym $mod+c exec $browser
+
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -58,10 +73,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -70,13 +85,19 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+
+# lock the screen
+bindsym $mod+x exec bash /home/raul/.config/i3/lock.sh
+
+# lock and sleep
+bindsym $mod+Shift+x exec bash /home/raul/.config/i3/lock.sh && systemctl suspend
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -95,29 +116,44 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $workspace-1 workspace main
+set $workspace-2 workspace term
+set $workspace-3 workspace chat
+set $workspace-4 workspace jetbrains 
+set $workspace-5 workspace 5
+set $workspace-6 workspace 6
+set $workspace-7 workspace 7
+set $workspace-8 workspace 8
+set $workspace-9 workspace 9
+set $workspace-10 workspace 10
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 $workspace-1
+bindsym $mod+2 $workspace-2
+bindsym $mod+3 $workspace-3
+bindsym $mod+4 $workspace-4
+bindsym $mod+5 $workspace-5
+bindsym $mod+6 $workspace-6
+bindsym $mod+7 $workspace-7
+bindsym $mod+8 $workspace-8
+bindsym $mod+9 $workspace-9
+bindsym $mod+0 $workspace-10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to $workspace-1
+bindsym $mod+Shift+2 move container to $workspace-2
+bindsym $mod+Shift+3 move container to $workspace-3
+bindsym $mod+Shift+4 move container to $workspace-4
+bindsym $mod+Shift+5 move container to $workspace-5
+bindsym $mod+Shift+6 move container to $workspace-6
+bindsym $mod+Shift+7 move container to $workspace-7
+bindsym $mod+Shift+8 move container to $workspace-8
+bindsym $mod+Shift+9 move container to $workspace-9
+bindsym $mod+Shift+0 move container to $workspace-10
+
+# move workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -152,11 +188,20 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# resize keys 
+bindsym $mod+y resize shrink width 10 px or 10ppt
+bindsym $mod+u resize shrink height 10 px or 10 ppt    
+bindsym $mod+i resize grow height 10 px or 10 ppt
+bindsym $mod+o resize grow width 10 px or 10 ppt
+
+
 set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
+
+bindsym $mod+d exec rofi -show run -font "Deja Vu Sans mono 18" -width 100 -opacity "50" -lines 3 -padding 800 -separator-style none -hide-scrollbar -bw 4 -bc "#111111" 
 
 # window colors
 # #                     border              background         text                 indicator
@@ -181,8 +226,6 @@ bar {
                 }
 #	status_command exec echo "Hello!"
 }
-
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Deja Vu Sans Mono 18"
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
