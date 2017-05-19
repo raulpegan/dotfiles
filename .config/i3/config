@@ -244,4 +244,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 bindsym Print exec screenshot
 
+# Startup
+exec --no-startup-id i3-msg 'workspace term; exec urxvt -e tmux; workspace main; exec urxvt -e tmux; exec chromium; workspace 0'
+
 exec_always xrandr --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --output LVDS1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --off
