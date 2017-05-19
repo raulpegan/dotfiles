@@ -17,6 +17,14 @@ URxvt.lineSpace: 0
 URxvt.scrollStyle: rxvt
 URxvt.scrollBar: false
 
+! Disable weird modes when pressing Shift+Control
+URxvt.iso14755: true
+URxvt.iso14755_52: false
+! Enable Shif-Control for copy paste
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+
 URxvt.depth: 32
 URxvt.background: [90]#2f343f
 
