@@ -22,5 +22,6 @@ download list:
 - pulseaudio
 - compton
 - udiskie
+- pamixer
 
 TODO: Autosetup script
