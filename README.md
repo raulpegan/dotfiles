@@ -20,5 +20,7 @@ download list:
 - i3-gaps
 - xbindkeys
 - pulseaudio
+- compton
+- udiskie
 
 TODO: Autosetup script
