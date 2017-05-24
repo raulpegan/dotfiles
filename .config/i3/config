@@ -232,9 +232,9 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -245,6 +245,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym Print exec screenshot
 
 # Startup
-exec --no-startup-id i3-msg 'workspace term; exec urxvt -e tmux; workspace main; exec urxvt -e tmux; exec chromium; workspace 0'
+exec --no-startup-id i3-msg 'workspace term; exec urxvt -e tmux; workspace main; exec urxvt -e tmux; exec chromium'
 
 exec_always xrandr --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --output LVDS1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --off
