@@ -18,5 +18,7 @@ download list:
 - lxappearance
 - rofi
 - i3-gaps
+- xbindkeys
+- pulseaudio
 
 TODO: Autosetup script

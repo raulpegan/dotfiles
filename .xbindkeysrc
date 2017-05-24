@@ -1,0 +1,7 @@
+# Increase volume
+"pactl set-sink-volume 0 +5%"
+    XF86AudioRaiseVolume
+
+# Increase volume
+"pactl set-sink-volume 0 -5%"
+   XF86AudioLowerVolume
