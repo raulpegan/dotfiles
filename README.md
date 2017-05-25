@@ -19,5 +19,6 @@ download list:
 - rofi
 - i3-gaps
 - compton
+- udiskie
 
 TODO: Autosetup script
