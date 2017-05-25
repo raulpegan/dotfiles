@@ -18,5 +18,6 @@ download list:
 - lxappearance
 - rofi
 - i3-gaps
+- compton
 
 TODO: Autosetup script
