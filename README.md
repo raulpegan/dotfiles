@@ -21,5 +21,7 @@ download list:
 - compton
 - udiskie
 - pamixer
+- imagemagick
+- scrot
 
 TODO: Autosetup script
