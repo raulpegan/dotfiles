@@ -9,10 +9,14 @@ powerline fonts from https://github.com/powerline/fonts
 
 arc gtk theme from https://github.com/horst3180/arc-theme (use lxappearance to config)
 
-i3-gaps
-
 i3block conf placed in ~/.conf/i3/
 
 using solarized theme for Xresources fonts, not bg
+
+download list:
+- arandr
+- lxappearance
+- rofi
+- i3-gaps
 
 TODO: Autosetup script
