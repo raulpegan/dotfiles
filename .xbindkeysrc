@@ -9,3 +9,21 @@
 # Mute audio
 "pamixer -t"
     XF86AudioMute
+
+# Increase Brightness
+"xbacklight -inc 20"
+    XF86MonBrightnessUp 
+
+# Decrease Brightness
+"xbacklight -dec 20"
+    XF86MonBrightnessDown
+
+# Audio Controls
+"playerctl play"
+    XF86AudioPlay 
+"playerctl pause"
+    XF86AudioPause 
+"playerctl next"
+    XF86AudioNext
+"playerctl previous"
+    XF86AudioPrev 
