@@ -29,6 +29,9 @@ set number
 " Enable mouse support
 set mouse=a
 
+" Enable better paste
+set paste
+
 " Turn on the WiLd menu
 set wildmenu
 
