@@ -23,6 +23,12 @@ set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
+" Set line numbers
+set number
+
+" Enable mouse support
+set mouse=a
+
 " Turn on the WiLd menu
 set wildmenu
 
