@@ -27,3 +27,4 @@ download list:
 TODO: 
 - Autosetup script
 - polybar
+- wal setup
