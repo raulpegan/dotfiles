@@ -24,4 +24,6 @@ download list:
 - imagemagick
 - scrot
 
-TODO: Autosetup script
+TODO: 
+- Autosetup script
+- polybar
