@@ -116,6 +116,13 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+
 set $workspace-1 workspace main
 set $workspace-2 workspace term
 set $workspace-3 workspace chat
@@ -230,6 +237,6 @@ bar {
 bindsym Print exec screenshot
 
 # Startup
-exec --no-startup-id i3-msg 'workspace term; exec urxvt -e tmux; workspace main; exec urxvt -e tmux; exec chromium'
+exec --no-startup-id i3-msg 'workspace term; exec urxvt -e tmux; workspace main; exec urxvt -e tmux; move scratchpad; exec chromium'
 
 exec_always xrandr --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --output LVDS1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --off
