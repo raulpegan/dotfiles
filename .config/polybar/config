@@ -21,7 +21,7 @@ green = ${xrdb:*.color6}
 bottom = false
 wm-restack = i3
 
-monitor = GPU-0.HDMI-0
+monitor = eDP1
 
 fixed-center = true
 
@@ -43,7 +43,7 @@ foreground = ${colors.fg}
 ;underline-size = 1
 ;underline-color = ${colors.fg}
 
-font-0 = "Deja Vu Sans Mono:size=11;3"
+font-0 = "Deja Vu Sans Mono:size=12;2"
 ;font-0 = xos4terminus:size=10;1
 font-1 = FontAwesome:size=10;2
 ;font-2 = TakaoGothic:weight=bold:size=12;1
@@ -294,7 +294,7 @@ bar-volume-empty-foreground = ${colors.gray}
 
 [module/battery]
 type = internal/battery
-battery = BAT1
+battery = BAT0
 adapter = AC
 full-at = 98
 
