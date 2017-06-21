@@ -7,8 +7,10 @@ margin-bottom = 100
 [colors]
 
 fg = ${xrdb:URxvt*.foreground}
-bg = ${xrdb:XTerm*.background} 
+;bg = ${xrdb:XTerm*.background} 
 ; ^ Does not allow transparency, quick fix
+bg = ${xrdb:polybar*.background} 
+;#cc2c1c15
 
 gray = ${xrdb:*.color8}
 black = ${xrdb:*.color0}
@@ -25,6 +27,8 @@ wm-restack = i3
 monitor = eDP1
 
 fixed-center = true
+
+tray-transparent = true
 
 border-top-size = 10
 border-right-size = 10
