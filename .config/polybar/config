@@ -6,8 +6,9 @@ margin-bottom = 100
 
 [colors]
 
-fg = ${xrdb:*.foreground}
-bg = ${xrdb:*.background}
+fg = ${xrdb:URxvt*.foreground}
+bg = ${xrdb:XTerm*.background} 
+; ^ Does not allow transparency, quick fix
 
 gray = ${xrdb:*.color8}
 black = ${xrdb:*.color0}
@@ -112,7 +113,7 @@ label-focused-padding = 1
 ;label-unfocused = 
 label-unfocused = %name%
 label-unfocused-padding = 1
-label-unfocused-foreground = #676E7D
+label-unfocused-foreground = ${colors.gray}
 ;label-unfocused-background = ${colors.black}
 ;label-unfocused-underline = ${colors.fg}
 
