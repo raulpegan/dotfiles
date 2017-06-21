@@ -11,7 +11,7 @@
 
 # i3-gaps
 for_window [class="^.*"] border pixel 0
-gaps inner 15
+gaps inner 10
 smart_gaps on
 
 bindsym $mod+z gaps inner current plus 5
@@ -221,22 +221,24 @@ hide_edge_borders both
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        colors {
-                    background $bg-color
-                    separator #757575
-                    #                  border             background         text
-                    focused_workspace  $bg-color          $bg-color          $text-color
-                    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-                    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-                }
+# bar {
+#        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#        colors {
+#                    background $bg-color
+#                    separator #757575
+#                    #                  border             background         text
+#                    focused_workspace  $bg-color          $bg-color          $text-color
+#                    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#                    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#                }
 #	status_command exec echo "Hello!"
-}
+#}
 
 bindsym Print exec screenshot
 
 # Startup
 exec --no-startup-id i3-msg 'workspace term; exec urxvt -e tmux; workspace main; exec urxvt -e tmux; move scratchpad; exec chromium'
+
+exec_always --no-startup-id killall polybar; polybar bar
 
 exec_always xrandr --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --output LVDS1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --off
