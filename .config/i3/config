@@ -12,7 +12,6 @@
 # i3-gaps
 for_window [class="^.*"] border pixel 0
 gaps inner 10
-smart_gaps on
 
 bindsym $mod+z gaps inner current plus 5
 bindsym $mod+Shift+z gaps inner current minus 5
