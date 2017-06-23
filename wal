@@ -138,7 +138,7 @@ set_special() {
         ;;
         # Raul's changes for polybar (15 case)
         15)
-            x_colors+="polybar*background: ${2}${newline}"
+            x_colors+="polybar.background: ${2}${newline}"
     esac
 }
 
@@ -151,8 +151,12 @@ send_sequences() {
     aforargb=$((aforargb/100))
     printf -v aforargb '%x' ${aforargb}
 
+    echo $aforargb
+    
     colorsforpoly=${colors[0]:1:6}
     
+    echo $colorsforpoly
+
     set_special 10  "${colors[15]}"
     set_special 11  "${alpha:+[${alpha}]}${colors[0]}"
     set_special 12  "${colors[15]}"
