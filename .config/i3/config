@@ -16,6 +16,9 @@ gaps inner 10
 bindsym $mod+z gaps inner current plus 5
 bindsym $mod+Shift+z gaps inner current minus 5
 
+bindsym $mod+equal gaps outer current plus 5
+bindsym $mod+Shift+equal gaps outer current minus 5
+
 set $mod Mod4
 
 # Set variables
@@ -238,6 +241,10 @@ bindsym Print exec screenshot
 # Startup
 exec --no-startup-id i3-msg 'workspace term; exec urxvt -e tmux; workspace chat; exec slack; exec whatever; workspace main; exec urxvt -e tmux; move scratchpad; exec chromium'
 
+# Polybar
 exec_always --no-startup-id killall polybar; polybar bar
+
+bindsym $mod+grave exec killall polybar
+bindsym $mod+Shift+grave exec polybar bar
 
 exec_always xrandr --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --output LVDS1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --off
