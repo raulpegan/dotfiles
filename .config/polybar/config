@@ -9,7 +9,7 @@ margin-bottom = 100
 fg = ${xrdb:URxvt*.foreground}
 ;bg = ${xrdb:XTerm*.background} 
 ; ^ Does not allow transparency, quick fix
-bg = ${xrdb:polybar*.background} 
+bg = ${xrdb:polybar*background} 
 ;#cc2c1c15
 
 gray = ${xrdb:*.color8}
@@ -274,10 +274,10 @@ type = internal/volume
 format-volume = <label-volume> <bar-volume>
 
 label-volume = VOL
-label-volume-foreground = ${root.foreground}
+label-volume-foreground = ${colors.fg}
 
 label-muted =  sound muted
-label-muted-foreground = ${colors.gray}
+label-muted-foreground = ${colors.lightgray}
 
 bar-volume-width = 10
 ;bar-volume-foreground-0 = ${colors.green}
@@ -294,7 +294,7 @@ bar-volume-fill = 
 bar-volume-fill-font = 4
 bar-volume-empty = 
 bar-volume-empty-font = 4
-bar-volume-empty-foreground = ${colors.gray}
+bar-volume-empty-foreground = ${colors.lightgray}
 
 
 [module/battery]
