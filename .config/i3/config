@@ -13,8 +13,8 @@
 for_window [class="^.*"] border pixel 0
 gaps inner 10
 
-bindsym $mod+z gaps inner current plus 5
-bindsym $mod+Shift+z gaps inner current minus 5
+bindsym $mod+minus gaps inner current plus 5
+bindsym $mod+Shift+minus gaps inner current minus 5
 
 bindsym $mod+equal gaps outer current plus 5
 bindsym $mod+Shift+equal gaps outer current minus 5
@@ -48,6 +48,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec $term 
+bindsym --release $mod+Shift+Return exec --no-startup-id "bash ~/.config/i3/sizeterm.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -119,10 +120,10 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+z move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show
+bindsym $mod+z scratchpad show
 
 
 set $workspace-1 workspace main
@@ -164,6 +165,10 @@ bindsym $mod+Shift+0 move container to $workspace-10
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
+# Assign workspaces
+assign [class="Slack"] $workspace-3
+assign [class="Whatever"] $workspace-4
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -196,6 +201,10 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# Instance and class specifications
+
+for_window [class="URxvt" instance="floatingterm"] floating enable
 
 # resize keys 
 bindsym $mod+y resize shrink width 10 px or 10ppt
@@ -239,12 +248,18 @@ hide_edge_borders both
 bindsym Print exec screenshot
 
 # Startup
-exec --no-startup-id i3-msg 'workspace term; exec urxvt -e tmux; workspace chat; exec slack; exec whatever; workspace main; exec urxvt -e tmux; move scratchpad; exec chromium'
+# exec --no-startup-id i3-msg 'workspace term; exec urxvt -e tmux; workspace chat; exec slack; exec whatever; workspace main; exec urxvt -e tmux; move scratchpad; exec chromium'
+
+exec bash ~/.config/i3/start.sh
 
 # Polybar
 exec_always --no-startup-id killall polybar; polybar bar
 
 bindsym $mod+grave exec killall polybar
 bindsym $mod+Shift+grave exec polybar bar
+
+# Wal
+
+bindsym $mod+g exec --no-startup-id i3-msg 'exec ~/Development/dotfiles/wal -i ~/Pictures/wallpapers -a 90'
 
 exec_always xrandr --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --output LVDS1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --off
