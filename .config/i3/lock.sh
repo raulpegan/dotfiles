@@ -1,4 +1,5 @@
 #!/bin/bash
+sleep 1
 scrot /tmp/screen.png
 convert /tmp/screen.png -blur 0x5 -scale 10% -scale 1000% /tmp/screen.png
 #convert /tmp/screen.png -paint 3 -modulate 80 /tmp/screen.png

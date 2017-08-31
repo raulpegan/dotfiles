@@ -100,7 +100,10 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+x exec bash /home/raul/.config/i3/lock.sh
 
 # lock and sleep
-bindsym $mod+Shift+x exec bash /home/raul/.config/i3/lock.sh && systemctl suspend
+bindsym $mod+Shift+x workspace 0; exec bash /home/raul/.config/i3/lock.sh && systemctl suspend
+
+# Auto lock
+exec xautolock -time 1 -locker '/home/raul/.config/i3/lock.sh' &
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
