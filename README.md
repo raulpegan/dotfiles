@@ -28,3 +28,4 @@ TODO:
 - Autosetup script
 - polybar
 - wal setup
+- find an i3lock alternative
