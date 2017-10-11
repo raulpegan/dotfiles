@@ -8,7 +8,7 @@ sleep 1
 i3-msg 'workspace chat'
 i3-msg exec "slack"
 sleep 5
-i3-msg 'workspace evrn'
-i3-msg exec "whatever"
+#i3-msg 'workspace evrn'
+#i3-msg exec "whatever"
 i3-msg '[instance="urxvtscratch"] move scratchpad'
 i3-msg 'workspace main'
