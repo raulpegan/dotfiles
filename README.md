@@ -23,6 +23,8 @@ download list:
 - pamixer
 - imagemagick
 - scrot
+- vim pathogen
+
 
 TODO: 
 - Autosetup script

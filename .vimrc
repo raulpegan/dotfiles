@@ -26,11 +26,29 @@ source $VIMRUNTIME/menu.vim
 " Set line numbers
 set number
 
+" Set relative line numbers
+set relativenumber
+
 " Enable mouse support
 set mouse=a
 
+" We'll be using this option to modify files directly
+" inside NERDTree inside Vim, without having to exit Vim
+set modifiable
+
+" This will highlight the current line your cursor is at
+set cursorline
+
+" This will highlight the current column your cursor is at
+" and it'll make it much easier to determine your closing tags
+" (along with matchtagalways) when code is properly indented
+set cursorcolumn
+
 " Enable better paste
 set paste
+
+" Enable better clipboard
+set clipboard=unnamedplus
 
 " Turn on the WiLd menu
 set wildmenu
@@ -163,3 +181,11 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
+""""
+" Pathogen
+""""
+
+execute pathogen#infect()
+
+" NERDTree can show hidden files
+let NERDTreeShowHidden=1
