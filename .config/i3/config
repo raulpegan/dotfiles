@@ -133,7 +133,7 @@ set $workspace-1 workspace main
 set $workspace-2 workspace term
 set $workspace-3 workspace chat
 set $workspace-4 workspace evrn
-set $workspace-5 workspace jetb
+set $workspace-5 workspace ides 
 set $workspace-6 workspace 6
 set $workspace-7 workspace 7
 set $workspace-8 workspace 8

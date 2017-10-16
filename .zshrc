@@ -1,3 +1,12 @@
+echo "             _ _            __             _ "
+echo "   /\  /\___| | | ___      /__\ __ _ _   _| |"
+echo "  / /_/ / _ \ | |/ _ \    / \/// _  | | | | |"
+echo " / __  /  __/ | | (_) |  / _  \ (_| | |_| | |"
+echo "/_/ /_/ \___|_|_|\___( ) \/ \_/\__,_|\__,_|_|"
+echo "                     |/                      "
+
+
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -83,4 +92,6 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:$HOME/.config/composer/vendor/bin:$PATH"
+# added by Anaconda3 installer
+export PATH="/home/raul/anaconda3/bin:$PATH"
