@@ -24,6 +24,7 @@ download list:
 - imagemagick
 - scrot
 - vim pathogen
+- urxvt-resize-font-git
 
 
 TODO: 

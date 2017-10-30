@@ -1,3 +1,6 @@
+! urxvt plugins
+URxvt.perl-ext-common: resize-font
+
 URxvt.font: xft:DejaVuSansMono:pixelsize=15
 
 ! do not scroll with output
