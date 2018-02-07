@@ -1,9 +1,11 @@
+# vim:ft=zsh ts=2 sw=2 sts=2
+
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 PROMPT='%{$fg[$NCOLOR]%}%n%{$reset_color%}@%{$fg[cyan]%}%m\
 %{$reset_color%}:%{$fg[yellow]%}%~\
-$(git_prompt_info) \
+$(git_prompt_info) 
 %{$fg[white]%}%(!.#.$)%{$reset_color%} '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='${return_code}'
