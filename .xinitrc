@@ -9,5 +9,10 @@ xflux -z 92075                      # flux
 
 xmodmap -e 'pointer = 1 25 3 4 5 6 7 8 9'  # remove middle click paste
 
+dunst &
+
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+
 exec i3
 

@@ -25,6 +25,7 @@ download list:
 - scrot
 - vim pathogen
 - urxvt-resize-font-git
+- autocutsel
 
 
 TODO: 
