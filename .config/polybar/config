@@ -22,7 +22,7 @@ lightgray = ${xrdb:*.color12}
 
 [bar/bar]
 bottom = false
-wm-restack = i3
+; wm-restack = i3
 
 monitor = eDP1
 
@@ -103,6 +103,7 @@ format = <label-mode> <label-state>
 index-sort = true
 
 enable-scroll = false
+enable-click = true
 
 label-focused-font = 2
 label-unfocused-font = 2
@@ -273,7 +274,7 @@ type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
 
-label-volume = VOL
+label-volume = VOL %percentage%%
 label-volume-foreground = ${colors.fg}
 
 label-muted =  sound muted
@@ -310,6 +311,7 @@ format-charging-padding = 1
 format-discharging = <ramp-capacity> <label-discharging>
 ;format-discharging-underline = ${colors.yellow}
 format-discharging-padding = 1
+label-discharging-foreground = ${colors.lightgray}
 
 format-full =   <label-full>
 ;format-full-underline = ${self.format-charging-underline}
