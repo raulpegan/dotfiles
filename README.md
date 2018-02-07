@@ -26,6 +26,7 @@ download list:
 - vim pathogen
 - urxvt-resize-font-git
 - autocutsel
+- ttf-font-awesome
 
 
 TODO: 
