@@ -1,7 +1,6 @@
-! urxvt plugins
 URxvt.perl-ext-common: resize-font
 
-URxvt.font: xft:DejaVuSansMono:pixelsize=15
+URxvt.font: xft:DejaVuSansMono:pixelsize=18
 
 ! do not scroll with output
 URxvt*scrollTtyOutput: false
@@ -24,12 +23,14 @@ URxvt.scrollBar: false
 URxvt.iso14755: true
 URxvt.iso14755_52: false
 ! Enable Shif-Control for copy paste
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+! URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+! URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 
 URxvt.depth: 32
-URxvt.background: [90]#2f343f
+URxvt*background: [85]#2f343f
+
+polybar.background: #e52F343F
 
 *background: #2f343f
 *foreground: #f3f4f5
